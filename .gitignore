@@ -1,0 +1,104 @@
+# ============================================================
+# Credentials & secrets — never commit these
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+config.json
+config.yaml
+config_*.json
+config_*.yaml
+!config.example.json
+!config.example.yaml
+!config.example.yml
+
+# ============================================================
+# Freqtrade-specific
+# ============================================================
+user_data/data/
+user_data/logs/
+user_data/models/
+user_data/backtest_results/
+user_data/hyperopt_results/
+user_data/notebooks/
+*.sqlite
+*.sqlite-journal
+trades_*.sqlite
+state.sqlite
+
+# Pickled models & feature data
+*.pkl
+*.joblib
+*.h5
+*.parquet
+*.feather
+
+# ============================================================
+# Logs & runtime artifacts
+# ============================================================
+*.log
+logs/
+*.pid
+*.out
+*.tmp
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# ============================================================
+# IDE / OS
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Jupyter
+# ============================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# ============================================================
+# Telegram & Discord tokens (extra paranoia)
+# ============================================================
+*telegram_token*
+*bot_token*
+.tokens

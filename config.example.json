@@ -1,0 +1,207 @@
+{
+  "$schema": "https://schema.freqtrade.io/schema.json",
+  "logfile": "/Users/YOUR_USERNAME/vibe_os/user_data/logs/freqtrade.log",
+  "loglevel": "info",
+  "timeframe": "4h",
+  "informative_timeframes": [
+    "1d"
+  ],
+  "informative_pairs": [
+    [
+      "BTC/USDT",
+      "1d"
+    ],
+    [
+      "ETH/USDT",
+      "1d"
+    ],
+    [
+      "SOL/USDT",
+      "1d"
+    ],
+    [
+      "XRP/USDT",
+      "1d"
+    ],
+    [
+      "DOGE/USDT",
+      "1d"
+    ],
+    [
+      "ADA/USDT",
+      "1d"
+    ],
+    [
+      "AVAX/USDT",
+      "1d"
+    ],
+    [
+      "LINK/USDT",
+      "1d"
+    ],
+    [
+      "DOT/USDT",
+      "1d"
+    ],
+    [
+      "LTC/USDT",
+      "1d"
+    ],
+    [
+      "XMR/USDT",
+      "1d"
+    ],
+    [
+      "BCH/USDT",
+      "1d"
+    ],
+    [
+      "SHIB/USDT",
+      "1d"
+    ],
+    [
+      "TON/USDT",
+      "1d"
+    ],
+    [
+      "ATOM/USDT",
+      "1d"
+    ],
+    [
+      "ALGO/USDT",
+      "1d"
+    ],
+    [
+      "KAS/USDT",
+      "1d"
+    ]
+  ],
+  "process_only_new_candles": true,
+  "db_url": "sqlite:////Users/YOUR_USERNAME/vibe_os/user_data/trades_dryrun.sqlite",
+  "max_open_trades": 10,
+  "stake_currency": "USDT",
+  "stake_amount": 150,
+  "tradable_balance_ratio": 0.95,
+  "stoploss": -0.1,
+  "fiat_display_currency": "USD",
+  "dry_run": true,
+  "cancel_open_orders_on_exit": true,
+  "trading_mode": "spot",
+  "force_entry_enable": true,
+  "unfilledtimeout": {
+    "entry": 15,
+    "exit": 15,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "other"
+  },
+  "exit_pricing": {
+    "price_side": "other"
+  },
+  "order_types": {
+    "entry": "limit",
+    "exit": "limit",
+    "stoploss": "market",
+    "stoploss_on_exchange": false,
+    "emergency_exit": "market"
+  },
+  "order_time_in_force": {
+    "entry": "GTC",
+    "exit": "GTC"
+  },
+  "exchange": {
+    "name": "kraken",
+    "key": "YOUR_KRAKEN_API_KEY_HERE",
+    "secret": "YOUR_KRAKEN_API_SECRET_HERE",
+    "pair_blacklist": [],
+    "ccxt_config": {
+      "enableRateLimit": true
+    },
+    "ccxt_async_config": {
+      "enableRateLimit": true
+    },
+    "pair_whitelist": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT",
+      "XRP/USDT",
+      "DOGE/USDT",
+      "ADA/USDT",
+      "AVAX/USDT",
+      "LINK/USDT",
+      "DOT/USDT",
+      "LTC/USDT",
+      "XMR/USDT",
+      "BCH/USDT",
+      "SHIB/USDT",
+      "TON/USDT",
+      "ATOM/USDT",
+      "ALGO/USDT",
+      "KAS/USDT"
+    ]
+  },
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+  "telegram": {
+    "enabled": true,
+    "token": "YOUR_TOKEN_HERE",
+    "chat_id": "YOUR_CHAT_ID_HERE",
+    "trade": {
+      "entry": true,
+      "exit": true
+    }
+  },
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "127.0.0.1",
+    "listen_port": 8080,
+    "verbosity": "info",
+    "enable_openapi": true,
+    "jwt_secret_key": "YOUR_JWT_SECRET_HERE",
+    "ws_token": "YOUR_WS_TOKEN_HERE",
+    "username": "freqtrader",
+    "password": "YOUR_PASSWORD_HERE"
+  },
+  "strategy": "UltimateAlphaV16",
+  "bot_name": "UltimateAlphaV16",
+  "initial_state": "running",
+  "internals": {
+    "process_throttle_secs": 5
+  },
+  "datadir": "/Users/YOUR_USERNAME/vibe_os/user_data/data/kraken",
+  "dataformat_ohlcv": "feather",
+  "dataformat_trades": "feather",
+  "freqai": {
+    "enabled": false,
+    "train_period_days": 40,
+    "backtest_period_days": 30,
+    "live_retrain_hours": 6,
+    "identifier": "ultimate_alpha_hybrid_v15",
+    "feature_parameters": {
+      "include_timeframes": [
+        "1h",
+        "4h"
+      ],
+      "include_corr_pairlist": [
+        "BTC/USDT",
+        "ETH/USDT"
+      ]
+    },
+    "model_training_parameters": {
+      "n_estimators": 1000,
+      "learning_rate": 0.04,
+      "max_depth": 9
+    },
+    "data_split_parameters": {
+      "test_size": 0.2
+    }
+  },
+  "hyperopt": {
+    "hyperopt_loss": "MultiMetricHyperOptLoss"
+  }
+}
