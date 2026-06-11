@@ -1,10 +1,25 @@
 # Freqtrade ML Strategy — UltimateAlphaV16
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Freqtrade](https://img.shields.io/badge/Freqtrade-2026.x-orange)
+![Model](https://img.shields.io/badge/Model-LightGBM-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Status](https://img.shields.io/badge/Status-dry--run-yellow)
+
+
 A Freqtrade trading strategy that uses a LightGBM classification model with 77 engineered features to score entry setups on crypto perpetual pairs. Includes regime-aware position sizing, ATR-based volatility-scaled stops, and a tiered ROI exit table.
 
 This repo documents both the working strategy AND the research process — including strategies that were tested and rejected. Honest backtesting is the point.
 
+![Cumulative Dryrun PnL](assets/equity_curve.png)
+
+> Real dry-run result: **-$93.98 across 139 trades** (Apr–May 2026, Kraken paper trading).
+> This is shown deliberately. The strategy is not yet profitable — the value here is
+> the honest measurement and the data-driven changes that followed. See [RESULTS.md](RESULTS.md).
+
 ## What's here
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the full signal-to-trade pipeline diagram.
 
 - **`ultimate_alpha_v16.py`** — The main strategy class, ~1000 lines. Custom entry signals (model prob + technical scoring + regime adjustment), custom stoploss (ATR-scaled), custom exit logic, Kelly criterion position sizing.
 - **`features.py`** — Feature engineering pipeline. 77 features: momentum (RSI multi-timeframe, MACD), volatility (ATR percentile, Bollinger position), volume profile, cross-pair rank, regime indicators.
